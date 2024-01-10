@@ -1,13 +1,16 @@
 package com.health.main.controller;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.health.main.model.Employee;
 import com.health.main.service.EmployeeService;
 
@@ -24,4 +27,18 @@ public class EmployeeController {
 		
 		return new ResponseEntity<Employee>(storedEmployee, HttpStatus.CREATED);
 	}
+	@GetMapping("/getSingleEmployee/{employeeId}")
+	public Optional<Employee> getEmployee(@PathVariable ("employeeId") int employeeId)
+	{
+		Optional<Employee> employee=employeeService.getData(employeeId);
+		return employee;
+	}
+	@PutMapping("/employee")
+	public ResponseEntity updateEmployee(@RequestBody Employee employee)
+	{
+		employee=employeeService.updateEmployeeDetails(employee);
+		return new ResponseEntity(employee,HttpStatus.OK);
+		
+	}
+	
 }
