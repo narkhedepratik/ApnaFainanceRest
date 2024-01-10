@@ -1,5 +1,7 @@
 package com.health.main.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,12 @@ public class EmployeeServiceImpl implements EmployeeService{
 		    Employee databaseEmployee = employeeRepository.save(employee);
 		
 		return databaseEmployee;
+	}
+
+	@Override
+	public List<Employee> getAllEmployees() {
+		List<Employee> employeeList=employeeRepository.findAll();
+		return employeeList;
 	}
 
 }
