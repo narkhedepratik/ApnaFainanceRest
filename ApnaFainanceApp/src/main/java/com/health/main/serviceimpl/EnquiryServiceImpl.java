@@ -1,5 +1,7 @@
 package com.health.main.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,13 @@ public class EnquiryServiceImpl implements EnquiryService {
 	public void saveEnquiry(Enquiry enquiry) {
 		enquiryRepository.save(enquiry);
 		
+	}
+
+
+	@Override
+	public List<Enquiry> getAllenquiry() {
+		
+		return (List<Enquiry>)enquiryRepository.findAll();
 	}
 
 }
