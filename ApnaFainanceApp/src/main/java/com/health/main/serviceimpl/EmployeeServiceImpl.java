@@ -1,5 +1,7 @@
 package com.health.main.serviceimpl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,13 @@ public class EmployeeServiceImpl implements EmployeeService{
 		    Employee databaseEmployee = employeeRepository.save(employee);
 		
 		return databaseEmployee;
+	}
+
+	@Override
+	public Employee getSingleEmployee(int employeeId) {
+	Optional<Employee> employee=	employeeRepository.findById(employeeId);
+		return employee.get();
+		
 	}
 
 }
