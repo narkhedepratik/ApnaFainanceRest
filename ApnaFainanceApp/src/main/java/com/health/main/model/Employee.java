@@ -1,7 +1,6 @@
 package com.health.main.model;
 
 import com.health.main.enums.Profile;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
