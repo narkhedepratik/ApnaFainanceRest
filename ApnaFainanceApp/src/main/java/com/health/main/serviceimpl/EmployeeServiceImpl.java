@@ -60,4 +60,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employeeList;
 	}
 
+	@Override
+	public Employee getSingleEmployee(int employeeId) {
+	Optional<Employee> employee=	employeeRepository.findById(employeeId);
+		return employee.get();
+		
+	}
+
 }

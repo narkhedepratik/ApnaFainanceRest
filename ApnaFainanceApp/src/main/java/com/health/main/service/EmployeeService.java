@@ -12,6 +12,8 @@ public interface EmployeeService {
 
 	public Employee loginCheck(String employeeEmail, String password);
 
+	public Employee getSingleEmployee(int employeeId);
+
 	
 	
 }
