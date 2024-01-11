@@ -20,7 +20,8 @@ public class EmailUtility {
 		
 		public void emailSend(Employee employee) {
 			// TODO Auto-generated method stub
-			String text="Hello "+employee.getEmployeeName()+", \n  Thank you, for registering with ApnaFianace.\n We are pleased to have"
+			String text="Hello "+employee.getEmployeeName()+", \n  Thank you, for registering with ApnaFianace."
+					+ "\n We are pleased to have"
 					+ " you on board.\n Your email ID is: ["+employee.getEmployeeEmail()+"] Your"
 					+ " password is: ["+employee.getPassword()+"] \n    Please ensure to keep your "
 					+ "password secure. You can also reset your password in case you forget "
@@ -36,7 +37,5 @@ public class EmailUtility {
 			
 			javaMailSender.send(mailMessage);
 			
-		
 			}
-
 }

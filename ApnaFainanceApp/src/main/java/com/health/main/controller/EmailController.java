@@ -6,21 +6,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.health.main.service.EmailService;
 
-@RestController("/mail")
+@RestController
+@RequestMapping("/mail")
 public class EmailController {
 	
 	@Autowired
 	EmailService emailService;
 	
-
-	
 	@GetMapping("/auth_mail/{employeeId}")
 	public String sendEmail(@PathVariable int employeeId) {
-		
 		
 		try
 		{
@@ -34,5 +33,4 @@ public class EmailController {
 		
 		return "Mail Sent Successfully...";
 	}
-
 }
