@@ -23,4 +23,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return databaseEmployee;
 	}
 
+	@Override
+	public void deletesingleEmployee( int id) {
+
+		employeeRepository.deleteById( id);
+	}
+
 }

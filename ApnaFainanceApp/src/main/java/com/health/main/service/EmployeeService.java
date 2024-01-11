@@ -6,5 +6,8 @@ public interface EmployeeService {
 
 	public Employee saveEmployeeDetails(Employee employee);
 	
+	public void deletesingleEmployee(int id);
+	
+
 	
 }
