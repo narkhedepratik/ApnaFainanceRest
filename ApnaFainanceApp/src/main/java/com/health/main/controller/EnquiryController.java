@@ -41,7 +41,8 @@ public class EnquiryController {
 	public ResponseEntity<Enquiry> genrateCibil(@PathVariable int id)
 	{
 	
-	  Enquiry enquiry =enquiryservice.setCibliDetails(id);	
+	  Enquiry enquiry = enquiryservice.setCibliDetails(id);	
+	  
 		return null;
 	}
 	
