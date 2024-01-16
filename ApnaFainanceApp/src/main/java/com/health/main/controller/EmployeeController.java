@@ -1,11 +1,9 @@
 package com.health.main.controller;
-import java.util.Optional;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +15,7 @@ import com.health.main.model.Employee;
 import com.health.main.service.EmployeeService;
 
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -38,7 +36,7 @@ public class EmployeeController {
 	public ResponseEntity <List <Employee>> getAll(){
 		
 		List<Employee> employeeList=employeeService.getAllEmployees();
-		return new ResponseEntity <List <Employee>> (employeeList,HttpStatus.FOUND);
+		return new ResponseEntity <List <Employee>> (employeeList,HttpStatus.OK);
 		
 	}
 
@@ -51,7 +49,7 @@ public class EmployeeController {
 		
 	}
 
-	@GetMapping("employee/{employeeId}")
+	@GetMapping("/employee/{employeeId}")
 	public Employee getSingleEmployee(@PathVariable int employeeId)
 	{
 		Employee employee= employeeService.getSingleEmployee(employeeId);
