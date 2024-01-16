@@ -19,6 +19,11 @@ public interface EmployeeService {
 	public Employee updateEmployeeDetails(Employee employee);
 
 
+	public void deleteEmployee(int employeeId);
+
+
+
+
 	
 	
 }

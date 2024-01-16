@@ -1,11 +1,16 @@
 package com.health.main.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.health.main.enums.CibilStatus;
+import com.health.main.enums.EnquiryStatus;
 import com.health.main.model.Enquiry;
+import com.health.main.model.cibilSCore;
 import com.health.main.repository.EnquiryRepository;
 import com.health.main.service.EnquiryService;
 
@@ -15,9 +20,11 @@ public class EnquiryServiceImpl implements EnquiryService {
 	
 	@Autowired private  EnquiryRepository enquiryRepository;
 	
+	private final Random CIBIL_RANDOM=new Random();
 
 	@Override
 	public void saveEnquiry(Enquiry enquiry) {
+		enquiry.setEnquiryStatus(EnquiryStatus.REGISTRED);
 		enquiryRepository.save(enquiry);
 		
 	}
@@ -27,6 +34,31 @@ public class EnquiryServiceImpl implements EnquiryService {
 	public List<Enquiry> getAllenquiry() {
 		
 		return (List<Enquiry>)enquiryRepository.findAll();
+	}
+
+
+	@Override
+	public Enquiry setCibliDetails(int id) {
+		
+		Optional<Enquiry> optionalEnquiry = enquiryRepository.findById(id);
+		if(optionalEnquiry.isPresent())
+		{
+			Enquiry enquiry=optionalEnquiry.get();
+			cibilSCore cibilSCore=new cibilSCore();
+			cibilSCore.setCibilScore(this.CIBIL_RANDOM.nextInt(300, 900));
+			
+			if(cibilSCore.getCibilScore()<=500) cibilSCore.setStatus(CibilStatus.POOR);
+			else if(cibilSCore.getCibilScore()>500 && cibilSCore.getCibilScore()<=600)
+				cibilSCore.setStatus(CibilStatus.AVERAGE);
+			else if(cibilSCore.getCibilScore()>600 && cibilSCore.getCibilScore()<800)
+				cibilSCore.setStatus(CibilStatus.GOOD);
+			else cibilSCore.setStatus(CibilStatus.EXCELLENT);
+			enquiry.setEnquiryStatus(EnquiryStatus.CIBIL_PROCESSING);
+			enquiry.setCibil(cibilSCore);	
+			enquiryRepository.save(enquiry);
+		}
+		
+		return null;
 	}
 
 }
