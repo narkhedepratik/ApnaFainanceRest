@@ -10,4 +10,6 @@ public interface EnquiryService {
 
 	public List<Enquiry> getAllenquiry();
 
+	public Enquiry setCibliDetails(int id);
+
 }
