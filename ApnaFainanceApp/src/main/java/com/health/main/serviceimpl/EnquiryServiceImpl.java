@@ -61,4 +61,14 @@ public class EnquiryServiceImpl implements EnquiryService {
 		return null;
 	}
 
+
+	@Override
+	public Enquiry getSingleEnquiry(int customerID) {
+	    Optional<Enquiry> optionalEnquiry=enquiryRepository.findById(customerID);
+		return optionalEnquiry.get() ;
+	}
+
+
+	
+
 }

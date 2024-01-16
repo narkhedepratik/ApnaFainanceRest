@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.health.main.model.Employee;
 import com.health.main.model.Enquiry;
 import com.health.main.service.EnquiryService;
 
@@ -45,7 +46,11 @@ public class EnquiryController {
 		return null;
 	}
 	
-	
+	@GetMapping("getbyId/{customerID}")
+	public Enquiry getSingleEnquiry(@PathVariable int customerID) {
+		Enquiry enquiry=enquiryservice.getSingleEnquiry(customerID);
+		return enquiry;
+	}
 	
 	
 }

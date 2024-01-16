@@ -12,4 +12,9 @@ public interface EnquiryService {
 
 	public Enquiry setCibliDetails(int id);
 
+	public Enquiry getSingleEnquiry(int customerID);
+
+	
+
+
 }
