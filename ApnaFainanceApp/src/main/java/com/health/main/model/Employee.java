@@ -1,7 +1,6 @@
 package com.health.main.model;
 
 import com.health.main.enums.Profile;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -18,7 +17,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Employee {
-    @Id
+    
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer employeeId;
 	private String employeeName;
