@@ -15,6 +15,7 @@ import com.health.main.service.EmailService;
 @RequestMapping("/mail")
 public class EmailController {
 	
+	
 	@Autowired
 	EmailService emailService;
 	
@@ -32,5 +33,21 @@ public class EmailController {
 		}
 		
 		return "Mail Sent Successfully...";
+	}
+	
+	@GetMapping("/cibil_mail/{customerID}")
+	public String sendEmailCibil(@PathVariable int customerID)
+	{
+		
+		try
+		{
+			emailService.sendCibilMail(customerID);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			return "Error while sending mail";
+		}
+		return "Mail Sent Successfully...";
+		
 	}
 }
