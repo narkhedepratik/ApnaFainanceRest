@@ -1,6 +1,14 @@
 package com.health.main.model;
 
+import java.util.Date;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.health.main.enums.CibilStatus;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,7 +25,9 @@ public class cibilSCore {
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int cibilId;	 
 	private int cibilScore;	 
-	private String cibilScoreDateTime;
-	private String status;
+	@CreationTimestamp
+	private Date cibilScoreDateTime;
+	@Enumerated(EnumType.STRING)
+	private CibilStatus status;
 
 }

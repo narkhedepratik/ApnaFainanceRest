@@ -1,18 +1,10 @@
 package com.health.main.serviceimpl;
-
-
 import java.util.List;
-
 import java.util.Optional;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import com.health.main.exception.EmailIdAlreadyExistsException;
 import com.health.main.exception.InvalidAuthDetailsException;
-
 import com.health.main.model.Employee;
 import com.health.main.repository.EmployeeRepository;
 import com.health.main.service.EmployeeService;
@@ -76,6 +68,15 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employee;
 	}
 
+	@Override
+	public void deleteEmployee(int employeeId) {
+		employeeRepository.deleteById(employeeId);
+		
+			
+		
+	}
+
+	
 
 	
 	
