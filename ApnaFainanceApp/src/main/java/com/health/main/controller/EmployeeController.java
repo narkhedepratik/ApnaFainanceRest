@@ -62,11 +62,11 @@ public class EmployeeController {
 	}
 
 	@GetMapping("employee/{employeeId}")
-	public Employee getSingleEmployee(@PathVariable int employeeId)
+	public ResponseEntity<Employee> getSingleEmployee(@PathVariable int employeeId)
 	{
 		Employee employee= employeeService.getSingleEmployee(employeeId);
 		
-		return employee;
+		return new ResponseEntity(employee,HttpStatus.OK);
 	}
 
 

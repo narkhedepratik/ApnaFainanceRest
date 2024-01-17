@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.health.main.model.Employee;
 import com.health.main.model.Enquiry;
 import com.health.main.service.EnquiryService;
 
@@ -55,6 +57,13 @@ public class EnquiryController {
 	}
 	
 	
+
+	@PutMapping("/updateEnquiryDetails")
+	public ResponseEntity updateEnquiry(@RequestBody Enquiry enquiry)
+	{
+		enquiry=enquiryservice.updateEnquiryDetails(enquiry);
+		return new ResponseEntity(enquiry,HttpStatus.OK);	
+	}
 	
 	
 }

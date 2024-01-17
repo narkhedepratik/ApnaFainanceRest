@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.health.main.enums.CibilStatus;
 import com.health.main.enums.EnquiryStatus;
+import com.health.main.model.Employee;
 import com.health.main.model.Enquiry;
 import com.health.main.model.cibilSCore;
 import com.health.main.repository.EnquiryRepository;
@@ -59,6 +60,16 @@ public class EnquiryServiceImpl implements EnquiryService {
 		}
 		
 		return null;
+	}
+
+
+	
+
+
+	@Override
+	public Enquiry updateEnquiryDetails(Enquiry enquiry) {
+		enquiry= enquiryRepository.save(enquiry);
+		return enquiry;
 	}
 
 }
