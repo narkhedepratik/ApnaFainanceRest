@@ -23,6 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Autowired private EmployeeRepository employeeRepository;
 	
+	
 	@Override
 	public Employee saveEmployeeDetails(Employee employee)  {
 		
@@ -57,14 +58,39 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employee;
 	}
 
+	
+//<<<<<<< HEAD
+//<<<<<<< HEAD
 	@Override
-<<<<<<< HEAD
 	public void deletesingleEmployee( int id) {
 
 		employeeRepository.deleteById( id);
 	}
 
-=======
+//=======
+//	public List<Employee> getAllEmployees() {
+//		List<Employee> employeeList=employeeRepository.findAll();
+//		return employeeList;
+//	}
+
+//	@Override
+//	public Employee getSingleEmployee(int employeeId) {
+//	Optional<Employee> employee=	employeeRepository.findById(employeeId);
+//		return employee.get();
+//		
+//	}
+
+//	@Override
+//	public Employee updateEmployeeDetails(Employee employee) {
+//		employee =employeeRepository.save(employee);
+//		return employee;
+//	}
+
+
+	
+	
+//>>>>>>> refs/heads/pratik
+////=======
 	public List<Employee> getAllEmployees() {
 		List<Employee> employeeList=employeeRepository.findAll();
 		return employeeList;
@@ -83,8 +109,17 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employee;
 	}
 
+	@Override
+	public void deleteEmployee(int employeeId) {
+		employeeRepository.deleteById(employeeId);
+		
+			
+		
+	}
+
+	
 
 	
 	
->>>>>>> refs/heads/pratik
+
 }
