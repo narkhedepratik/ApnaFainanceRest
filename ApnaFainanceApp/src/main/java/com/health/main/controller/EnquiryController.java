@@ -62,6 +62,7 @@ public class EnquiryController {
 	public ResponseEntity updateEnquiry(@RequestBody Enquiry enquiry)
 	{
 		enquiry=enquiryservice.updateEnquiryDetails(enquiry);
+		
 		return new ResponseEntity(enquiry,HttpStatus.OK);	
 	}
 	
