@@ -41,7 +41,25 @@ public class EmployeeServiceImpl implements EmployeeService{
 		
 		return databaseEmployee;
 	      }
+//<<<<<<< HEAD
+//=======
 	}
+	
+//	@Override
+//	public Employee loginCheck(String employeeEmail, String password) {
+//		
+//
+//		
+//		Employee employee=employeeRepository.findByEmployeeEmailAndPassword(employeeEmail, password);
+//		
+//		
+//		if(employee == null) {
+//			
+//			throw new InvalidAuthDetailsException("Invalid username or password");
+//		}
+//		return employee;
+////>>>>>>> refs/remotes/origin/main
+//	}
 	
 	@Override
 	public Employee loginCheck(String employeeEmail, String password) {
@@ -61,11 +79,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 	
 //<<<<<<< HEAD
 //<<<<<<< HEAD
-	@Override
-	public void deletesingleEmployee( int id) {
-
-		employeeRepository.deleteById( id);
-	}
+//	@Override
+//	public void deletesingleEmployee( int id) {
+//
+//		employeeRepository.deleteById( id);
+//	}
 
 //=======
 //	public List<Employee> getAllEmployees() {
@@ -91,6 +109,38 @@ public class EmployeeServiceImpl implements EmployeeService{
 	
 //>>>>>>> refs/heads/pratik
 ////=======
+//	public List<Employee> getAllEmployees() {
+//		List<Employee> employeeList=employeeRepository.findAll();
+//		return employeeList;
+//	}
+
+//	@Override
+//	public Employee getSingleEmployee(int employeeId) {
+//	Optional<Employee> employee=	employeeRepository.findById(employeeId);
+//		return employee.get();
+//		
+//	}
+
+//	@Override
+//	public Employee updateEmployeeDetails(Employee employee) {
+//		employee =employeeRepository.save(employee);
+//		return employee;
+//	}
+
+//	@Override
+//	public void deleteEmployee(int employeeId) {
+//		employeeRepository.deleteById(employeeId);
+//		
+//			
+//		
+//	}
+
+	
+
+	
+	
+
+	@Override
 	public List<Employee> getAllEmployees() {
 		List<Employee> employeeList=employeeRepository.findAll();
 		return employeeList;
@@ -117,9 +167,14 @@ public class EmployeeServiceImpl implements EmployeeService{
 		
 	}
 
+	@Override
+	public void deletesingleEmployee(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 	
 	
-
 }

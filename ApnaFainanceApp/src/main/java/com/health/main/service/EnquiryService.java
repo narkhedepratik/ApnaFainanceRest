@@ -12,5 +12,10 @@ public interface EnquiryService {
 
 	public Enquiry setCibliDetails(int id);
 
-	public void delete(int id);
+	public void delete(int customerID);
+
+//<<<<<<< HEAD
+//	public void delete(int id);
+//=======
+//>>>>>>> refs/remotes/origin/main
 }

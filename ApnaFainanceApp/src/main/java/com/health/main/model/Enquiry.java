@@ -32,5 +32,5 @@ public class Enquiry {
 	@Enumerated(EnumType.STRING)
 	private EnquiryStatus  enquiryStatus;
 	@OneToOne(cascade=CascadeType.MERGE.DETACH.REFRESH.REMOVE)
-	private cibilSCore cibil;
+	private CibilSCore cibil;
 }

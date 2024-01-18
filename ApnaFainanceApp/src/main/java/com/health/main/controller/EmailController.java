@@ -1,4 +1,7 @@
+//<<<<<<< HEAD
  package com.health.main.controller;
+//=======
+//>>>>>>> refs/remotes/origin/main
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

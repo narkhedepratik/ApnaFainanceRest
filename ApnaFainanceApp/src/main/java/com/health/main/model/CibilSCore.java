@@ -20,13 +20,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class cibilSCore {
+public class CibilSCore {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int cibilId;	 
 	private int cibilScore;	 
 	@CreationTimestamp
-	private Date cibilScoreDateTime;
+	private String cibilScoreDateTime;
 	@Enumerated(EnumType.STRING)
 	private CibilStatus status;
 

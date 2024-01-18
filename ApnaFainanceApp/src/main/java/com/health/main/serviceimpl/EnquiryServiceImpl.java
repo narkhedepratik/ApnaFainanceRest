@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.health.main.enums.CibilStatus;
 import com.health.main.enums.EnquiryStatus;
 import com.health.main.model.Enquiry;
-import com.health.main.model.cibilSCore;
+import com.health.main.model.CibilSCore;
 import com.health.main.repository.EnquiryRepository;
 import com.health.main.service.EnquiryService;
 
@@ -44,7 +44,7 @@ public class EnquiryServiceImpl implements EnquiryService {
 		if(optionalEnquiry.isPresent())
 		{
 			Enquiry enquiry=optionalEnquiry.get();
-			cibilSCore cibilSCore=new cibilSCore();
+			CibilSCore cibilSCore=new CibilSCore();
 			cibilSCore.setCibilScore(this.CIBIL_RANDOM.nextInt(300, 900));
 			
 			if(cibilSCore.getCibilScore()<=500) cibilSCore.setStatus(CibilStatus.POOR);
@@ -63,11 +63,20 @@ public class EnquiryServiceImpl implements EnquiryService {
 
 
 	@Override
-	public void delete(int id) {
-		
-		enquiryRepository.deleteById(id);
-		// TODO Auto-generated method stub
-		
+	public void delete(int customerID) {
+enquiryRepository.deleteById(customerID);		
 	}
 
+//<<<<<<< HEAD
+//
+//	@Override
+//	public void delete(int id) {
+//		
+//		enquiryRepository.deleteById(id);
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//=======
+//>>>>>>> refs/remotes/origin/main
 }

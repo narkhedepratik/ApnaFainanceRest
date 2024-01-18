@@ -1,4 +1,9 @@
 package com.health.main.service;
+//<<<<<<< HEAD
+//=======
+//import java.util.Optional;
+//
+//>>>>>>> refs/remotes/origin/main
 import java.util.List;
 
 import com.health.main.model.Employee;
@@ -18,15 +23,26 @@ public interface EmployeeService {
 
 
 //<<<<<<< HEAD
+////<<<<<<< HEAD
+////=======
+//	public void deleteEmployee(int employeeId);
+//
+//
+//
+//
+////>>>>>>> refs/remotes/origin/main
 //=======
-	public void deleteEmployee(int employeeId);
-
-
-
-
+//	public void deleteEmployee(int employeeId);
+//
+//
+//
+//
 //>>>>>>> refs/remotes/origin/main
 	
 	public void deletesingleEmployee(int id);
+
+
+	void deleteEmployee(int employeeId);
 	
 
 	
