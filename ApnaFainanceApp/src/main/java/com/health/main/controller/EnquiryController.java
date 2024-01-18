@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +24,11 @@ import com.health.main.service.EnquiryService;
 
 
 
+
 import jakarta.websocket.server.PathParam;
 
 @CrossOrigin("*")
+
 
 @RestController
 @RequestMapping("/enquiry")
@@ -56,6 +57,13 @@ public class EnquiryController {
 		return null;
 	}
 	
+	@GetMapping("getbyId/{enquiryID}")
+	public ResponseEntity getSingleEnquiry(@PathVariable int enquiryID) {
+		Enquiry enquiry=enquiryservice.getSingleEnquiry(enquiryID);
+		return new ResponseEntity(enquiry,HttpStatus.OK);
+
+	}
+	
 	
 
 	@PutMapping("/updateEnquiryDetails")
@@ -63,8 +71,12 @@ public class EnquiryController {
 	{
 		enquiry=enquiryservice.updateEnquiryDetails(enquiry);
 		
-		return new ResponseEntity(enquiry,HttpStatus.OK);	
+		return new ResponseEntity(enquiry,HttpStatus.OK);
+		
+		
 	}
+	
+	
 	
 	
 }

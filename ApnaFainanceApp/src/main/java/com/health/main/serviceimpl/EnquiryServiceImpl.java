@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.health.main.enums.CibilStatus;
 import com.health.main.enums.EnquiryStatus;
+import com.health.main.exception.EnquiryIdNullException;
 import com.health.main.model.Employee;
+
 import com.health.main.model.Enquiry;
 import com.health.main.model.cibilSCore;
 import com.health.main.repository.EnquiryRepository;
@@ -63,13 +65,50 @@ public class EnquiryServiceImpl implements EnquiryService {
 	}
 
 
-	
+
+
+	@Override
+	public Enquiry getSingleEnquiry(int enquiryID) {
+	    Optional<Enquiry> optionalEnquiry=enquiryRepository.findById(enquiryID);
+		return optionalEnquiry.get() ;
+	}
+
 
 
 	@Override
 	public Enquiry updateEnquiryDetails(Enquiry enquiry) {
-		enquiry= enquiryRepository.save(enquiry);
-		return enquiry;
+		
+		Optional<Enquiry> existingEnquiry=enquiryRepository.findById(enquiry.getCustomerID());
+         
+		if(existingEnquiry.isPresent())
+		{
+			Enquiry existingEntity = existingEnquiry.get();
+
+			enquiryRepository.save(enquiry);
+
+			
+			updateEnquiryStatusBasedOn(existingEntity);
+
+
+			return enquiryRepository.save(existingEntity);
+
+		}
+		
+		else {
+			throw new EnquiryIdNullException("Enquiry ID Does Not Exist");
+		}
+			
 	}
+
+
+	private void updateEnquiryStatusBasedOn(Enquiry existingEntity) {
+		existingEntity.setEnquiryStatus(EnquiryStatus.CIBIL_PROCESSING);
+		
+	}
+
+
+
+
+	
 
 }

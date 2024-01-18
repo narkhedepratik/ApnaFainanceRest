@@ -12,8 +12,14 @@ public interface EnquiryService {
 
 	public Enquiry setCibliDetails(int id);
 
+
+	public Enquiry getSingleEnquiry(int enquiryID);
+	public Enquiry updateEnquiryDetails( Enquiry enquiry);
+
+
+
 	
 
-	public Enquiry updateEnquiryDetails(Enquiry enquiry);
+
 
 }
