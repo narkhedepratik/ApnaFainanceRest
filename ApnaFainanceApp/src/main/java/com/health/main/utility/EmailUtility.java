@@ -45,7 +45,7 @@ public class EmailUtility {
 		
 		public void sendCIBILMail(Enquiry enquiry)
 		{
-		if(enquiry.getCibil().getCibilScore()>300)
+		if(enquiry.getCibil().getCibilScore()>600)
 		{
 			String text = "Dear Customer,"
 					+ "\n \n             Congratulation !!As per your CIBIL SCORE and loan History, Your medical loan is Pre-Approved."
