@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.health.main.model.Customer;
 import com.health.main.model.Employee;
 import com.health.main.service.EmployeeService;
 
@@ -69,6 +71,7 @@ public class EmployeeController {
 		employee=employeeService.updateEmployeeDetails(employee);
 		return new ResponseEntity(employee,HttpStatus.OK);	
 	}
+	
 
 	@DeleteMapping("/delete/{employeeId}")
 	public ResponseEntity <Employee>deleteEmployee(@PathVariable   int employeeId)

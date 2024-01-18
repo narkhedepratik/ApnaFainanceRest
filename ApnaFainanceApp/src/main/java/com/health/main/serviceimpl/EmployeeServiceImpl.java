@@ -22,7 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 		
 	if(existingEmployee.isPresent()) {
 		
-			throw new EmailIdAlreadyExistsException("This Email id is already registered. Try with another ");
+			throw new EmailIdAlreadyExistsException("This Email id is already registered. Please try with another. ");
 		}
 	else {
 		      
