@@ -1,12 +1,6 @@
 package com.health.main.model;
 
-
-
-import com.health.main.enums.Profile;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,17 +12,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Employee {
+public class CustomerVerification{
     
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer employeeId;
-	private String employeeName;
-	@Column(unique = true)
-	private String employeeEmail;
-	@Enumerated(EnumType.STRING)
-	private Profile employeeProfile;
-	private String password;
-	
+	private Integer verificationId;
+	private String verificationDate;
+	private String status;
+	private String remarks;
 	
 }
