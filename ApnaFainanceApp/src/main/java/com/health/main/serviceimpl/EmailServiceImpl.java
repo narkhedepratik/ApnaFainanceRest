@@ -5,14 +5,19 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.health.main.model.Employee;
+import com.health.main.model.Enquiry;
 import com.health.main.repository.EmployeeRepository;
+import com.health.main.repository.EnquiryRepository;
 import com.health.main.service.EmailService;
 import com.health.main.utility.EmailUtility;
 
 @Service
 public class EmailServiceImpl implements EmailService {
 
-	@Autowired EmployeeRepository employeeRepository;
+	@Autowired 
+	EmployeeRepository employeeRepository;
+	@Autowired
+	EnquiryRepository enquiryRepository;
 	@Autowired
 	EmailUtility emailUtility;
 	
@@ -25,6 +30,16 @@ public class EmailServiceImpl implements EmailService {
 		    emailUtility.emailSend(optionalEmployee.get());
 		 }
 	
+	}
+
+	@Override
+	public void sendCibilMail(int customerID) {
+		// TODO Auto-generated method stub
+		Optional<Enquiry> optionalEnquiry = enquiryRepository.findById(customerID);
+		if(optionalEnquiry.isPresent())
+		{
+			emailUtility.sendCIBILMail(optionalEnquiry.get());
+		}
 	}
 
 }
