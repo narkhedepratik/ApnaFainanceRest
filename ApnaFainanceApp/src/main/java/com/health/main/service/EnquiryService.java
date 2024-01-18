@@ -18,4 +18,9 @@ public interface EnquiryService {
 //	public void delete(int id);
 //=======
 //>>>>>>> refs/remotes/origin/main
+	public Enquiry getSingleEnquiry(int enquiryID);
+
+	
+
+
 }

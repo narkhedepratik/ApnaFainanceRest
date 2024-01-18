@@ -33,5 +33,11 @@ public class ApplicationExceptionHandler {
 //		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
 //	}
 //>>>>>>> refs/remotes/origin/main
+	@ExceptionHandler(EmailIdAlreadyExistsException.class)
+	@ResponseStatus(HttpStatus.UNAUTHORIZED)
+	public ResponseEntity<String> handleEmailIdAlreadyExistsException(EmailIdAlreadyExistsException e){
+		
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+	}
 	
 }

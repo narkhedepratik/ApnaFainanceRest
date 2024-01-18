@@ -31,7 +31,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 		
 	if(existingEmployee.isPresent()) {
 		
-			throw new EmailIdAlreadyExistsException("This Email id is already registered. Try with another ");
+//<<<<<<< HEAD
+//			throw new EmailIdAlreadyExistsException("This Email id is already registered. Try with another ");
+//=======
+//			throw new EmailIdAlreadyExistsException("This Email id is already registered. Please try with another. ");
+//>>>>>>> refs/remotes/origin/main
 		}
 	else {
 		      
@@ -41,25 +45,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 		
 		return databaseEmployee;
 	      }
-//<<<<<<< HEAD
-//=======
+	return employee;
+
 	}
-	
-//	@Override
-//	public Employee loginCheck(String employeeEmail, String password) {
-//		
-//
-//		
-//		Employee employee=employeeRepository.findByEmployeeEmailAndPassword(employeeEmail, password);
-//		
-//		
-//		if(employee == null) {
-//			
-//			throw new InvalidAuthDetailsException("Invalid username or password");
-//		}
-//		return employee;
-////>>>>>>> refs/remotes/origin/main
-//	}
+
+
 	
 	@Override
 	public Employee loginCheck(String employeeEmail, String password) {
@@ -75,67 +65,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 		}
 		return employee;
 	}
-
-	
-//<<<<<<< HEAD
-//<<<<<<< HEAD
-//	@Override
-//	public void deletesingleEmployee( int id) {
-//
-//		employeeRepository.deleteById( id);
-//	}
-
-//=======
-//	public List<Employee> getAllEmployees() {
-//		List<Employee> employeeList=employeeRepository.findAll();
-//		return employeeList;
-//	}
-
-//	@Override
-//	public Employee getSingleEmployee(int employeeId) {
-//	Optional<Employee> employee=	employeeRepository.findById(employeeId);
-//		return employee.get();
-//		
-//	}
-
-//	@Override
-//	public Employee updateEmployeeDetails(Employee employee) {
-//		employee =employeeRepository.save(employee);
-//		return employee;
-//	}
-
-
-	
-	
-//>>>>>>> refs/heads/pratik
-////=======
-//	public List<Employee> getAllEmployees() {
-//		List<Employee> employeeList=employeeRepository.findAll();
-//		return employeeList;
-//	}
-
-//	@Override
-//	public Employee getSingleEmployee(int employeeId) {
-//	Optional<Employee> employee=	employeeRepository.findById(employeeId);
-//		return employee.get();
-//		
-//	}
-
-//	@Override
-//	public Employee updateEmployeeDetails(Employee employee) {
-//		employee =employeeRepository.save(employee);
-//		return employee;
-//	}
-
-//	@Override
-//	public void deleteEmployee(int employeeId) {
-//		employeeRepository.deleteById(employeeId);
-//		
-//			
-//		
-//	}
-
-	
 
 	
 	
@@ -164,13 +93,14 @@ public class EmployeeServiceImpl implements EmployeeService{
 		employeeRepository.deleteById(employeeId);
 		
 			
+
 		
 	}
 
 	@Override
 	public void deletesingleEmployee(int id) {
-		// TODO Auto-generated method stub
-		
+
+		employeeRepository.deleteById(id);
 	}
 
 	
