@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,7 @@ import com.health.main.model.Enquiry;
 import com.health.main.service.EnquiryService;
 
 import jakarta.websocket.server.PathParam;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/enquiry")
 public class EnquiryController {
@@ -42,7 +43,7 @@ public class EnquiryController {
 	{
 	
 	  Enquiry enquiry =enquiryservice.setCibliDetails(id);	
-		return null;
+		return new ResponseEntity<Enquiry>(enquiry,HttpStatus.OK);
 	}
 	
 	

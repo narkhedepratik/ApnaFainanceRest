@@ -26,7 +26,7 @@ public class cibilSCore {
 	private int cibilId;	 
 	private int cibilScore;	 
 	@CreationTimestamp
-	private Date cibilScoreDateTime;
+	private String cibilScoreDateTime;
 	@Enumerated(EnumType.STRING)
 	private CibilStatus status;
 
