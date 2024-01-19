@@ -65,7 +65,7 @@ public class CustomerController {
 		 Customer Customer =    customerService.getSingleCustomer(id);
 		
 		return Customer;
-
 	}
-
 }
+	
+	
