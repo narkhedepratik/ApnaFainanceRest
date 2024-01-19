@@ -2,6 +2,7 @@ package com.health.main.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +22,7 @@ public class CustomerController {
 	@Autowired private CustomerService customerService;
 	
 
-	@PostMapping("/create_customer")
+	@PostMapping(value="/create_customer" , consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity createLoanApplication(
 			@RequestPart("panCard") MultipartFile panCard,
 			@RequestPart("aadharCard") MultipartFile aadharCard,
