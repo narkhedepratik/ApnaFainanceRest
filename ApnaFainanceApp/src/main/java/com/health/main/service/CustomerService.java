@@ -6,7 +6,7 @@ import com.health.main.model.Customer;
 
 public interface CustomerService {
 
-	Customer saveLoanApplication(MultipartFile panCard, MultipartFile aadharCard, MultipartFile photo, String signature,
+	Customer saveLoanApplication(MultipartFile panCard, MultipartFile aadharCard, MultipartFile photo, MultipartFile signature,
 			String loanApplicationJson);
 
 	

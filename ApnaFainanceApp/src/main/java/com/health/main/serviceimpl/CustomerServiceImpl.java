@@ -21,7 +21,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public Customer saveLoanApplication(MultipartFile panCard, MultipartFile aadharCard, MultipartFile photo,
-			String signature, String loanApplicationJson) {
+			MultipartFile signature, String loanApplicationJson) {
 		
 
 		ObjectMapper mapper=new ObjectMapper();

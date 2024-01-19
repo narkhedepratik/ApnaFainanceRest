@@ -72,6 +72,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	public Employee updateEmployeeDetails(Employee employee) {
+		Optional<Employee> existingEmployee=(employeeRepository.findById(employee.getEmployeeId()));
+        String password=existingEmployee.get().getPassword();
+        employee.setPassword(password);
 		employee =employeeRepository.save(employee);
 		return employee;
 	}

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.health.main.model.Enquiry;
 import com.health.main.service.EnquiryService;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/enquiry")
 public class EnquiryController {

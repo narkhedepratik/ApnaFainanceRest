@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +25,7 @@ public class CustomerController {
 			@RequestPart("panCard") MultipartFile panCard,
 			@RequestPart("aadharCard") MultipartFile aadharCard,
 			@RequestPart("photo") MultipartFile photo,
-			@RequestPart("signature") String signature,
+			@RequestPart("signature") MultipartFile signature,
 			@RequestPart("loanApplicationJson") String loanApplicationJson
 			)
 	 {
