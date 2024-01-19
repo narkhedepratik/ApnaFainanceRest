@@ -4,6 +4,7 @@ import com.health.main.enums.EnquiryStatus;
 import com.health.main.enums.Profile;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -25,7 +26,7 @@ public class Enquiry {
 	private int customerID;		 
 	private String firstName;		 
 	private String lastName; 
-	private int age;	 
+	private int age;
 	private String email;	
 	private long mobileNo;
 	private String  pancardNo;

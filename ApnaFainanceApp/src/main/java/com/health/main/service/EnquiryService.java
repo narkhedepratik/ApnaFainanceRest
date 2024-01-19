@@ -14,7 +14,7 @@ public interface EnquiryService {
 
 	public Enquiry getSingleEnquiry(int enquiryID);
 
-	
+	public Enquiry updateEnquiryDetails( Enquiry enquiry);
 
 
 }
