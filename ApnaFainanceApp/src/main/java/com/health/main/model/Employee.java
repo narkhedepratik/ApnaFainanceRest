@@ -1,6 +1,9 @@
 package com.health.main.model;
 
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+
 
 import com.health.main.enums.Profile;
 import jakarta.persistence.Column;

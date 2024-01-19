@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.health.main.exception.EmailIdAlreadyExistsException;
+import com.health.main.exception.EnquiryIdNullException;
 import com.health.main.exception.InvalidAuthDetailsException;
 
 @RestControllerAdvice
@@ -18,6 +19,7 @@ public class ApplicationExceptionHandler {
 		
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
 	}
+	
 	@ExceptionHandler(EmailIdAlreadyExistsException.class)
 	@ResponseStatus(HttpStatus.UNAUTHORIZED)
 	public ResponseEntity<String> handleEmailIdAlreadyExistsException(EmailIdAlreadyExistsException e){
@@ -25,4 +27,10 @@ public class ApplicationExceptionHandler {
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
 	}
 	
+//	@ResponseStatus(HttpStatus.BAD_REQUEST)
+//	public ResponseEntity<String> handleEnquiryIdNullException(EnquiryIdNullException e){
+//		
+//		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+//	}
+//	
 }
