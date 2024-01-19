@@ -2,6 +2,10 @@ package com.health.main.serviceimpl;
 
 
 import java.io.IOException;
+
+import java.util.List;
+import java.util.Optional;
+
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +56,19 @@ public class CustomerServiceImpl implements CustomerService{
 		}
 		
 		return null;
+	}
+
+	@Override
+	public List<Customer> getAllCustomer() {
+	
+		List<Customer>customerlist = customerRepository.findAll();
+		return customerlist;
+	}
+
+	@Override
+	public Customer getSingleCustomer(UUID id) {
+	Optional<Customer> Customer = customerRepository.findById(id);
+		return Customer.get();
 	}
 
 	

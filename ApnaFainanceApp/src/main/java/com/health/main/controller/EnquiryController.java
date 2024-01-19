@@ -46,8 +46,10 @@ public class EnquiryController {
 	public ResponseEntity<Enquiry> genrateCibil(@PathVariable int id)
 	{
 	
+
 	  Enquiry enquiry =enquiryservice.setCibliDetails(id);	
 		return new ResponseEntity<Enquiry>(enquiry,HttpStatus.OK);
+
 	}
 	
 	@GetMapping("getbyId/{enquiryID}")
