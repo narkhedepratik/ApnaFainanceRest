@@ -1,9 +1,14 @@
 package com.health.main.controller;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +37,21 @@ public class CustomerController {
 	 {
 	Customer loanApplication = customerService.saveLoanApplication(panCard,aadharCard,photo,signature,loanApplicationJson);
 		return new ResponseEntity(HttpStatus.CREATED);
+	}
+  
+	@GetMapping("/getAllCustomer")
+	public ResponseEntity<?> getAllCustomer()
+	{
+		List<Customer> list = customerService.getAllCustomer();
+		return new ResponseEntity<>(list, HttpStatus.OK);
+		
+	}
+	@GetMapping("Customer/{customerId}")
+	public Customer getSingaleCustomer(@PathVariable ("customerId")  UUID id) {
+		 Customer Customer =    customerService.getSingleCustomer(id);
+		
+		return Customer;
+		
 	}
 
 }
