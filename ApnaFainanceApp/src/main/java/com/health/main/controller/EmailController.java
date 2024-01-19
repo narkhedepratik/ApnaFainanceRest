@@ -2,6 +2,8 @@ package com.health.main.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +22,7 @@ public class EmailController {
 	EmailService emailService;
 	
 	@GetMapping("/auth_mail/{employeeId}")
-	public String sendEmail(@PathVariable int employeeId) {
+	public ResponseEntity sendEmail(@PathVariable int employeeId) {
 		
 		try
 		{
@@ -29,14 +31,14 @@ public class EmailController {
 		catch (Exception e2) {
 			// TODO: handle exception
 			//System.out.println(e2);
-			return "Error while sending mail";
+			return  new ResponseEntity(HttpStatus.EXPECTATION_FAILED);
 		}
 		
-		return "Mail Sent Successfully...";
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	
 	@GetMapping("/cibil_mail/{customerID}")
-	public String sendEmailCibil(@PathVariable int customerID)
+	public ResponseEntity sendEmailCibil(@PathVariable int customerID)
 	{
 		
 		try
@@ -45,9 +47,9 @@ public class EmailController {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			return "Error while sending mail";
+			return new ResponseEntity(HttpStatus.EXPECTATION_FAILED);
 		}
-		return "Mail Sent Successfully...";
+		return new ResponseEntity(HttpStatus.OK);
 		
 	}
 }
