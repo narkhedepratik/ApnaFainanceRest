@@ -1,4 +1,5 @@
 package com.health.main.serviceimpl;
+//<<<<<<< HEAD
 
 
 import java.util.List;
@@ -6,13 +7,22 @@ import java.util.List;
 import java.util.Optional;
 
 
+//=======
+import java.util.List;
+import java.util.Optional;
+//>>>>>>> refs/remotes/origin/main
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+//<<<<<<< HEAD
 
 
 import com.health.main.exception.EmailIdAlreadyExistsException;
 import com.health.main.exception.InvalidAuthDetailsException;
 
+//=======
+import com.health.main.exception.EmailIdAlreadyExistsException;
+import com.health.main.exception.InvalidAuthDetailsException;
+//>>>>>>> refs/remotes/origin/main
 import com.health.main.model.Employee;
 import com.health.main.repository.EmployeeRepository;
 import com.health.main.service.EmployeeService;
@@ -31,10 +41,13 @@ public class EmployeeServiceImpl implements EmployeeService{
 		
 	if(existingEmployee.isPresent()) {
 		
-//<<<<<<< HEAD
-//			throw new EmailIdAlreadyExistsException("This Email id is already registered. Try with another ");
+
+			throw new EmailIdAlreadyExistsException("This Email id is already registered. Try with another ");
 //=======
 //			throw new EmailIdAlreadyExistsException("This Email id is already registered. Please try with another. ");
+//>>>>>>> refs/remotes/origin/main
+//=======
+	//		throw new EmailIdAlreadyExistsException("This Email id is already registered. Please try with another. ");
 //>>>>>>> refs/remotes/origin/main
 		}
 	else {
@@ -45,10 +58,29 @@ public class EmployeeServiceImpl implements EmployeeService{
 		
 		return databaseEmployee;
 	      }
-	return employee;
-
 	}
+//<<<<<<< HEAD
+//	return employee;
+//=======
+	
+//	
+//	@Override
+//	public Employee loginCheck(String employeeEmail, String password) {
+//		
+//
+//		
+//		Employee employee=employeeRepository.findByEmployeeEmailAndPassword(employeeEmail, password);
+//		
+//		
+//		if(employee == null) {
+//			
+//			throw new InvalidAuthDetailsException("Invalid username or password");
+//		}
+//		return employee;
+////>>>>>>> refs/remotes/origin/main
+//	}
 
+//<<<<<<< HEAD
 
 	
 	@Override
@@ -65,10 +97,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 		}
 		return employee;
 	}
+	@Override
+	public void deletesingleEmployee(int id) {
 
-	
-	
-
+		employeeRepository.deleteById(id);
+	}
 	@Override
 	public List<Employee> getAllEmployees() {
 		List<Employee> employeeList=employeeRepository.findAll();
@@ -93,14 +126,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 		employeeRepository.deleteById(employeeId);
 		
 			
-
 		
-	}
-
-	@Override
-	public void deletesingleEmployee(int id) {
-
-		employeeRepository.deleteById(id);
 	}
 
 	

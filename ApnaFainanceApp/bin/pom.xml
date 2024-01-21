@@ -38,6 +38,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
@@ -49,6 +50,13 @@
     </dependency>
 
 >>>>>>> refs/heads/pratik
+=======
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.6</version>
+    </dependency>
+
+>>>>>>> refs/remotes/origin/main
 =======
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>

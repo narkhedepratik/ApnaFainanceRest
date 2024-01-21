@@ -7,6 +7,7 @@ package com.health.main.service;
 //
 //	public void sendEmail(int employeeId);
 //=======
+
 public interface EmailService {
 
 	public void sendEmail(int employeeId);
