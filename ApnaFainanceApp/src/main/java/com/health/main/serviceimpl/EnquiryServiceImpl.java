@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.health.main.enums.CibilStatus;
 import com.health.main.enums.EnquiryStatus;
 
+
 import com.health.main.exception.EnquiryIdNullException;
 import com.health.main.model.Employee;
 import com.health.main.model.Enquiry;
@@ -101,6 +102,14 @@ public class EnquiryServiceImpl implements EnquiryService {
 
 	private void updateEnquiryStatusBasedOn(Enquiry existingEntity) {
 		existingEntity.setEnquiryStatus(EnquiryStatus.CIBIL_PROCESSING);
+		
+	}
+
+
+
+	public void delete(int customerID) {
+	enquiryRepository.deleteById(customerID);
+
 		
 	}
 

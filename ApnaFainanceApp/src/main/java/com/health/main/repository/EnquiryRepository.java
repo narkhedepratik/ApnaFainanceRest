@@ -7,9 +7,6 @@ import com.health.main.model.Enquiry;
 @Repository
 public interface EnquiryRepository extends CrudRepository<Enquiry,Integer>{
 
-
-
-
 	Object findBycustomerID(int customerID);
 
 }
