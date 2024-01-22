@@ -60,7 +60,7 @@ public class CustomerController {
 		return new ResponseEntity<>(list, HttpStatus.OK);
 		
 	}
-	@GetMapping("Customer/{customerId}")
+	@GetMapping("/Customer/{customerId}")
 	public Customer getSingaleCustomer(@PathVariable ("customerId")  UUID id) {
 		 Customer Customer =    customerService.getSingleCustomer(id);
 		

@@ -63,7 +63,9 @@ public class Customer {
 	@OneToOne(cascade = CascadeType.ALL)
 	private CustomerVerification customerVerification;
 	
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Enquiry enquiry;
+
 	
 	
 	

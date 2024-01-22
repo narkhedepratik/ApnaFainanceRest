@@ -10,6 +10,6 @@ public interface EnquiryRepository extends CrudRepository<Enquiry,Integer>{
 
 
 
-	Object findBycustomerID(int customerID);
+//	Object findBycustomerID(int customerID);
 
 }

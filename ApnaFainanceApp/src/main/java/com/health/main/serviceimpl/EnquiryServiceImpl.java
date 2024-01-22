@@ -7,6 +7,7 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.health.main.controller.EnquiryController;
 import com.health.main.enums.CibilStatus;
 import com.health.main.enums.EnquiryStatus;
 
@@ -28,7 +29,10 @@ public class EnquiryServiceImpl implements EnquiryService {
 	@Override
 	public void saveEnquiry(Enquiry enquiry) {
 		enquiry.setEnquiryStatus(EnquiryStatus.REGISTRED);
+		
 		enquiryRepository.save(enquiry);
+		
+				
 		
 	}
 

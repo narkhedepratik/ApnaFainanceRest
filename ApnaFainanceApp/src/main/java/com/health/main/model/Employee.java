@@ -1,11 +1,11 @@
 package com.health.main.model;
 
 
-<<<<<<< HEAD
-=======
+
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 
->>>>>>> refs/remotes/origin/pratiksha
+
 
 import com.health.main.enums.Profile;
 import jakarta.persistence.Column;
