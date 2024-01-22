@@ -1,12 +1,14 @@
 package com.health.main.service;
 
+
+import com.health.main.model.Customer;
+
 import java.util.List;
 
 import java.util.UUID;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.health.main.model.Customer;
 
 public interface CustomerService {
 
