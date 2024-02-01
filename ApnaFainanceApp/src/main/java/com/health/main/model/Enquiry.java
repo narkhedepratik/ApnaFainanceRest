@@ -1,10 +1,10 @@
 package com.health.main.model;
 
+
 import com.health.main.enums.EnquiryStatus;
-import com.health.main.enums.Profile;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -33,5 +33,6 @@ public class Enquiry {
 	@Enumerated(EnumType.STRING)
 	private EnquiryStatus  enquiryStatus;
 	@OneToOne(cascade=CascadeType.MERGE.DETACH.REFRESH.REMOVE)
+
 	private cibilSCore cibil;
 }

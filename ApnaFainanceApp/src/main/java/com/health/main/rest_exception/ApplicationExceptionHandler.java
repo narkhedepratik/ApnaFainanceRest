@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.health.main.exception.EmailIdAlreadyExistsException;
-import com.health.main.exception.EnquiryIdNullException;
+
 import com.health.main.exception.InvalidAuthDetailsException;
 
 @RestControllerAdvice

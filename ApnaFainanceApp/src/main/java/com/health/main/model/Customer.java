@@ -3,6 +3,8 @@ package com.health.main.model;
 import java.util.List;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,6 +26,7 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
+
 	private UUID customerId;
 	private String customerName;
 	private String customerDateOfBirth;
@@ -31,6 +34,7 @@ public class Customer {
 	private String customerGender;
 	@Column(unique = true)
 	private String customerEmail;
+            
 	private long customerMobileNumber;
 	
 	@OneToOne(cascade = CascadeType.ALL)
